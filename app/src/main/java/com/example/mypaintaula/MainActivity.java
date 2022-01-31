@@ -13,6 +13,8 @@ import com.skydoves.colorpickerview.ColorEnvelope;
 import com.skydoves.colorpickerview.ColorPickerDialog;
 import com.skydoves.colorpickerview.listeners.ColorEnvelopeListener;
 
+import org.w3c.dom.Text;
+
 public class MainActivity extends AppCompatActivity {
 
     SimplePaint simplePaint;
@@ -56,14 +58,14 @@ public class MainActivity extends AppCompatActivity {
        new ColorPickerDialog.Builder(this)
                .setTitle("ColorPicker Dialog")
                .setPreferenceName("MyColorPickerDialog")
-               .setPositiveButton(getString(R.string.confirm),
+               .setPositiveButton("Confirmar",
                 new ColorEnvelopeListener() {
                     @Override
                     public void onColorSelected(ColorEnvelope envelope, boolean fromUser) {
                         setColor(envelope);
                     }
                 })
-               .setNegativeButton(getString(R.string.cancel),
+               .setNegativeButton( "Cancelar",
                 new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
